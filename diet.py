@@ -10,12 +10,12 @@ app = Flask(__name__)
 info = Meal_bmi()
 print(info.finding_height_cm(167))
 #main page
-@app.route('/', methods=['GET','POST'])
+@app.route('/diet', methods=['GET','POST'])
 def home():
 	if request.method == 'GET' :
 		data = {
 		"synopsis" : ""}
-		return render_template('home.html',data = data)
+		return render_template('diet_main.html',data = data)
 	else :
 
 		weight = request.form['weight']
