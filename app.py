@@ -1,7 +1,4 @@
 from flask import Flask, render_template,request,jsonify,send_file
-from bmi import Meal_bmi
-from calories_check import req
-import json
 from pytube import YouTube
 
 
@@ -58,7 +55,9 @@ app = Flask(__name__)
 
 # 	return json.dumps(data["inna"])
 
-
+@app.route("/")
+def home():
+	return "<h1>HOME</h1>"
 @app.route("/key=<url>")
 def jam(url):
 
